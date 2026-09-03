@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="authot" content="Isac Pereira de Souza">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/salao.css">
+    <script src="js/salao.js"></script>
+
+    <title>Agendamento</title>
+</head>
+<body>
+
+        <h2>AGENDAMENTO</h2>
+    <ul class="menu">
+        <li><a href="index.html" target="principal">PÁGINA INICIAL</a></li>
+    </ul>
+
+        <fieldset>
+            <legend><strong>DADOS DO AGENDAMENTO</strong></legend>
+
+            <form onsubmit="cadastrarAgendamento(); return false;">
+
+                <label><strong>Nome do Cliente:</strong></label><br>
+                <input type="text" id="nome" style="width: 98%; padding: 10px;" required><br><br>
+
+                <label><strong>Profissional Preferido</strong></label><br>
+                <select id="profissional" onchange="atualizarHorarioProfissional()">
+                    <option value="Carlos (Cabelereiro)">Carlos (Cabelereiro)</option>
+                    <option value="Mariana (Cabelereira)">Mariana (Cabelereira)</option>
+                    <option value="Roberto (Barbeiro)">Roberto (Barbeiro)</option>
+                    <option value="Ana (Esteticista)">Ana (Esteticista)</option>
+                    <option value="Indiferente">Indiferente</option>
+                </select>
+                <p id="avisoHorarioProfissional" class="aviso-horario"></p>
+                <br>
+
+                <label><strong>Sexo</strong></label>
+                <input type="radio" name="sexo" value="Masulino" required>Masculino
+                <input type="radio" name="sexo" value="Masculino">Feminino<br><br>
+
+                <label><strong>Serviços Desejados</strong></label>
+
+                <input type="checkbox" class="serv" value="Corte">Corte de cabelo
+                <input type="checkbox" class="serv" value="Barba">Barba
+                <input type="checkbox" class="serv" value="Coloração">Coloração
+                <input type="checkbox" class="serv" value="Escova">Escova
+                <input type="checkbox" class="serv" value="Hidratação">Hidratação
+                <input type="checkbox" class="serv" value="Manicure">Manicure<br><br>
+
+                <label><strong>Data do Atendimento:</strong></label>
+                <input type="date" id="data" required><br><br>
+
+                <label><b>Horário:</b></label>
+                <input type="time" id="horario" style="padding: 8px;" required><br>
+                <p id="erroHorario" class="erro-horario"></p>
+                <br>
+
+                <input class="botao" type="submit" value="CONFIRMAR AGENDAMENTO">
+            </form>
+
+        </fieldset>
+        <div id="resultado" style="margin-top: 20px; min-height: 50px;"></div>
+
+        <script>
+            atualizarHorarioProfissional();
+        </script>
+
+
+
+
+</body>
+</html>

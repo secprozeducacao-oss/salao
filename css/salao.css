@@ -1,0 +1,226 @@
+body {
+    background: #f5eeee;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+}
+
+h2 {
+    margin: 0px;
+    background: #7a1020;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+.servicos-lista {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+}
+
+.servicos-lista li {
+    text-align: center;
+}
+
+.servicos-lista img {
+    width: 100%;
+}
+h3{
+        display: flex;
+    align-items: center;
+        color: #7a1020;
+font-size: 40px;
+margin-top: 50px;
+}
+#saudacaoUsuario {
+    text-align: center;
+    color: #7a1020;
+    font-size: 16px;
+}
+
+#banner {
+    width: 100%;
+    height: auto;
+        display: block;
+
+}
+.menu {
+    margin: 0px;
+    background: #ffd1d1;
+    padding: 15px;
+    list-style: none;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 25px;
+}
+
+.menu a {
+    color: #7a1020;
+    text-decoration: none;
+    text-transform: uppercase;
+    font: bold 20px Arial;
+}
+
+.menu a:hover {
+    color: #560b15;
+}
+
+.menu a.ativo {
+    border-bottom: 3px solid #7a1020;
+}
+
+fieldset {
+    border: 2px solid #7a1020;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #7a1020;
+}
+
+#nome {
+    width: 95%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.botao {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #7a1020;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botao:hover {
+    background: #560b15;
+}
+
+#rodape {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.tabela {
+    margin: 40px auto;
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    background-color: white;
+}
+
+.tabela-horario {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-horario th {
+    background-color: #7a1020;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabela-horario td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.tabela-horario tr:nth-child(even) {
+    background-color: #f7e7ea;
+}
+
+.comprovante {
+    border: 2px solid #7a1020;
+    padding: 20px;
+    margin-top: 20px;
+    background: white;
+    border-radius: 5px;
+}
+
+.lista-profissionais {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.lista-profissionais li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #e2c7cc;
+}
+
+.lista-profissionais li:last-child {
+    border-bottom: none;
+}
+
+.lista-profissionais img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #7a1020;
+}
+
+.prof-nome {
+    flex: 1;
+    font-weight: bold;
+}
+
+.prof-nome small {
+    font-weight: normal;
+    color: #666;
+}
+
+.prof-horario {
+    color: #7a1020;
+    font-weight: bold;
+}
+
+.aviso-horario {
+    display: inline-block;
+    margin: 8px 0 0;
+    padding: 6px 10px;
+    background-color: #f7e7ea;
+    border-left: 4px solid #7a1020;
+    font-size: 15px;
+    color: #7a1020;
+}
+
+.erro-horario {
+    margin: 6px 0 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #c62828;
+}
+
+.titulo-comprovante {
+    color: #7a1020;
+    margin-top: auto;
+}
+h3 img {
+    width: 45px;
+    height: 45px;    margin-right: 8px;
+}

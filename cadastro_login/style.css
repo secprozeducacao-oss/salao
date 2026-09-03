@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5eeee;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 350px;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #7a1020;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    border: 2px solid #7a1020;
+}
+
+.formulario h2 {
+    color: #7a1020;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #7a1020;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #7a1020;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #560b15;
+}
+
+p {
+    color: black;
+    margin-bottom: 8px;
+}
+
+a {
+    color: #7a1020;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+.erro {
+    color: #c62828;
+    font-size: 13px;
+    margin-bottom: 12px;
+}

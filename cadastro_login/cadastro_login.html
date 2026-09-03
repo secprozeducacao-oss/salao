@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login e Cadastro</title>
+ 
+<link rel="stylesheet" href="style.css"></head>
+<body>
+
+  <div class="container">
+    
+    <img src="/cadastro_login/tesoura.png" alt="Logo" class="logo">
+    <h1>Salão Cabelereiro</h1>
+
+    <div id="boxLogin" class="formulario">
+      <h2>Login</h2>
+      <form id="formLogin">
+        <input type="email" id="emailLogin" placeholder="Seu e-mail" required>
+        <input type="password" id="senhaLogin" placeholder="Sua senha" required>
+        
+        <p id="msgErroLogin" class="erro"></p>
+        
+        <button type="submit">Entrar</button>
+        
+        <p>Não tem conta?</p>
+        <a onclick="alternarTela('cadastro')">Cadastre-se</a>
+      </form>
+    </div>
+
+    <div id="boxCadastro" class="formulario hidden">
+      <h2>Criar Conta</h2>
+      <form id="formCadastro">
+        <input type="text" id="nomeCadastro" placeholder="Seu nome completo" required>
+        <input type="email" id="emailCadastro" placeholder="Seu melhor e-mail" required>
+        <input type="password" id="senhaCadastro" placeholder="Crie uma senha" required>
+        
+        <p id="msgErroCadastro" class="erro"></p>
+        
+        <button type="submit">Cadastrar</button>
+        
+        <p>Já tem uma conta?</p>
+        <a onclick="alternarTela('login')">Faça Login</a>
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    function alternarTela(tela) {
+      const boxLogin = document.getElementById('boxLogin');
+      const boxCadastro = document.getElementById('boxCadastro');
+
+      document.getElementById('msgErroLogin').innerText = '';
+      document.getElementById('msgErroCadastro').innerText = '';
+
+      if (tela === 'cadastro') {
+        boxLogin.classList.add('hidden');
+        boxCadastro.classList.remove('hidden');
+      } else {
+        boxCadastro.classList.add('hidden');
+        boxLogin.classList.remove('hidden');
+      }
+    }
+
+    function obterUsuarios() {
+      const dados = localStorage.getItem('usuarios');
+      return dados ? JSON.parse(dados) : [];
+    }
+
+    document.getElementById('formCadastro').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('nomeCadastro').value.trim();
+      const email = document.getElementById('emailCadastro').value.trim();
+      const senha = document.getElementById('senhaCadastro').value.trim();
+      const msgErro = document.getElementById('msgErroCadastro');
+
+      if (senha.length < 6) {
+        msgErro.innerText = 'A senha deve conter no mínimo 6 caracteres.';
+        return;
+      }
+
+      const usuarios = obterUsuarios();
+
+      const jaExiste = usuarios.some(function(usuario) {
+        return usuario.email.toLowerCase() === email.toLowerCase();
+      });
+
+      if (jaExiste) {
+        msgErro.innerText = 'Esse e-mail já está cadastrado.';
+        return;
+      }
+
+      usuarios.push({ nome: nome, email: email, senha: senha });
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+      localStorage.setItem('usuarioLogado', nome);
+
+      window.location.href = '../index.html';
+    });
+
+    document.getElementById('formLogin').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('emailLogin').value.trim();
+      const senha = document.getElementById('senhaLogin').value.trim();
+      const msgErro = document.getElementById('msgErroLogin');
+
+      const usuarios = obterUsuarios();
+
+      const usuarioEncontrado = usuarios.find(function(usuario) {
+        return usuario.email.toLowerCase() === email.toLowerCase() && usuario.senha === senha;
+      });
+
+      if (!usuarioEncontrado) {
+        msgErro.innerText = 'E-mail ou senha incorretos.';
+        return;
+      }
+
+      localStorage.setItem('usuarioLogado', usuarioEncontrado.nome);
+
+      window.location.href = '../index.html';
+    });
+  </script>
+
+</body>
+</html>
